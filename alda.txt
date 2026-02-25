@@ -1,0 +1,223 @@
+
+--- linked_list_resolve ---
+class ListNode:
+	def __int__(self, val=0, next=None):
+		self.val = val
+		self.next = next
+class MyLinkedList:
+	def __int__(self):
+		self.size = 0
+		self.dummy_head = ListNode()
+
+# get(index)
+	def get(self, index: int) -> int:
+		if index < 0 or index >= self.size:
+			return -1
+		current = self.dummy_head.next
+		for _ in range(index):
+			current = current.next＝
+
+		return current.val
+
+
+#addAtHead(val)
+	def addAtHead(self, val: int) -> None:
+		new_node = ListNode(val, self.dummy_head.next)
+		self.dummy_head.next = new_node
+		self.size += 1	
+
+
+#addAtTail(val)
+	def addAtTail(self, val: int) -> None:
+		current = self.dummy_head
+		while current.next:
+			current = current.next
+		current.next = ListNode(val)
+		self.size += 1
+
+
+#addAtIndex(index, val)
+	def addAtIndex(self, index: int, val: int) -> None:
+		# case 1
+		if index > self.size:
+			return
+		# case 2
+		if index == self.size:
+			self.addAtITail(val)
+			return
+
+		current = self.dummy_head
+		for _ in range(index):
+			current = current.next
+
+		new_node = ListNode(val, current.next)
+		current.next = new_node
+		self.size += 1
+
+
+#deleteAtIndex(index)
+	def deleteAtIndex(self, index: int) -> None:
+		if index < 0 or index >= self.size:
+			return
+		current = self.dummy_head
+		for _ in range(index):
+			current = current.next
+		current.next = current.next.next
+		self.size -=1
+	current 
+
+
+0908
+TLS
+0909 task
+ansible 
+0910 task
+ansible playbook => 0911
+0911 task
+ansible
+0912 task
+kafka introduction prepare
+
+0915
+meeting, mimir
+0916
+mimir, 
+0917
+alda
+0918
+garmin
+0919
+alda, BDR
+
+0922
+meeting
+back home check 差旅 => 月會項目p...
+
+mimir
+
+0923
+mimir
+0924
+華航
+0925
+mimir garmin
+0926
+
+class Solution
+	def...
+	
+	dummy_head = ListNode(next = head)
+	current = dummy_head
+	while current.next:
+		if current.next.val == val:
+			current.next = current.next.next
+		else:
+			current = current.next
+	return dummy_head.next 
+
+--- kafka introduction
+Ch1 basic Kafka introduction
+
+
+first research
+What is Kafka => apache kafka event 
+confluent => learning path => kraft => fudamentals 
+developer 
+
+Why Kafka
+chatGPT
+解決的議題有什麼
+優缺點
+
+How Kafka work
+confluent developer 
+=> 
+DSP for Partners
+
+(broker, kraft, topic, partition, segment, producer -> broker -> consumer, offset commit, high watermark -> rapitcation(lead & follower)(leader epoch), properties, minisync(at least work), isr(leader & follower state)
+
+
+Introduction architecture 
+how about their arch
+ex: broker node=3, drawing infra
+
+Kafka clients
+producer config, 
+bootsrap server,
+retry, batch.size, linger.ms, acks, enalbe.idempotence
+how to do excatly once 
+--
+consumer
+batch.inbis
+group.id
+hearbeat.intenal, session timeout
+, auto offset.reset重要, bat....
+max.poll.interval.ms, max.poll.raker
+partition.assignment
+
+1.producer & consumer
+2.check for rex ok
+3.monitor 
+4.ppt email to frank & steven
+
+Cluster health check through monitoring
+
+
+1. from database to events
+傳統：儲存狀態(state) 中心化管理
+kafka：以事件(event)為核心設計
+不會存在傳統資料庫中,會被寫入log日誌中
+2. what is apache kafka
+
+
+--- vscode setting
+1. color theme change
+Ctrl + shift + p => color theme
+
+2. Create file
+touch filename
+
+3.change UI
+
+4.show file UI
+Ctrl + Shift + E
+
+--- vscode remote -SSH
+1. cmd + shift + p
+2. type 'remot'
+3. chooes 'Remote-SSH: Connect to Host...'
+4. type machine name or IP
+5. type you're password
+
+--- linux
+1. scp
+scp [使用者名稱]@[遠端主機IP或網域]:[遠端檔案路徑] [本地端目標路徑]
+
+--- for 333
+chat for 3 people
+chat for more 3 sentances
+record for more 3 opions
+
+ability
+selling manage
+
+Producer
+Producer config
+Bootstrap.servers
+Acks
+Retries
+Enable.idempotence(exactly-once)
+Batch.size
+Linger.ms
+
+Consumer
+Group.id
+Offset
+Rebalance
+max.poll.interval.ms
+partition.assignment.strategy
+
+SIT 
+192.168.87.218
+192.168.87.111
+
