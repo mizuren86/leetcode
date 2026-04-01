@@ -7,7 +7,7 @@ const carts = [
 // 請在此處撰寫 reduce 邏輯
 const totalAmount = carts.reduce(function(acc, cur) {
   /* 程式碼撰寫處 */
-  return acc + (acc.price * cur.quantity)
+  return acc + (cur.price * cur.quantity)
 }, 0);
 
 console.log(totalAmount); 
